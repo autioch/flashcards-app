@@ -13,9 +13,9 @@ body,
 
 .app {
   display: flex;
-    background: linear-gradient(0deg, #6af, rgba(0,0,0,0) 30%),
-                linear-gradient(90deg, #f66, rgba(0,0,0,0) 70%),
-                linear-gradient(-90deg, #6f6, rgba(0,0,0,0) 70%);
+  background: linear-gradient(0deg, #6af, rgba(0,0,0,0) 30%),
+              linear-gradient(90deg, #f66, rgba(0,0,0,0) 70%),
+              linear-gradient(-90deg, #6f6, rgba(0,0,0,0) 70%);  
 }
 
 .col {
@@ -50,4 +50,10 @@ body,
 
 .small-header.small-header {
   margin-bottom: .25em;
+}
+
+.word-list {
+  overflow: auto;
+  width: 100%;
+  background: rgba(255, 255, 255, .2);
 }

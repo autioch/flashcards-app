@@ -1,5 +1,6 @@
 import React from 'react';
 import Guess from './guess.jsx';
+import List from './list.jsx';
 import { Button } from 'antd';
 
 import './styles.scss';
@@ -9,10 +10,7 @@ export default function App({ state, store }) {
 
   return (
     <div className="app">
-      <div className="col bad">
-        <div className="col__header">Bad ({bad.length})</div>
-        {bad.map((word, i) => <div key={i}>{word.polish} - {word.german}</div>)}
-      </div>
+      <List words={bad} header="Bad" />
       <div className="col mid">
         {!state.isFinished && <Guess letters={letters} currentWord={state.currentWord} guess={store.guess} />}
         {state.isFinished && <div className="col__header">Finished!</div>}
@@ -21,10 +19,7 @@ export default function App({ state, store }) {
           <Button onClick={store.restart} size="large">Restart</Button>
         </div>
       </div>
-      <div className="col good">
-        <div className="col__header">Good ({good.length})</div>
-        {good.map((word, i) => <div key={i}>{word.polish} - {word.german}</div>)}
-      </div>
+      <List words={good} header="Good" />
     </div>
   );
 }

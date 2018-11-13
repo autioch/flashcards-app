@@ -39,10 +39,10 @@ export default class Guess extends Component {
           placeholder="Place Your guess..."
           onChange={(ev) => this.updateGuess(ev)}
           onPressEnter={() => this.guess()}
-          autocapitalize="off"
-          autocomplete="off"
-          autocorrect="off"
-          spellcheck="false"
+          autoCapitalize="off"
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck="false"
           size="large"
         />
         <div className="small-header">Possible characters:</div>

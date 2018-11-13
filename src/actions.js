@@ -55,14 +55,14 @@ export default {
 
   setGood({ state }) {
     return {
-      good: state.good.concat(state.currentWord),
+      good: [state.currentWord].concat(state.good),
       currentWord: null
     };
   },
 
   setBad({ state }) {
     return {
-      bad: state.bad.concat(state.currentWord),
+      bad: [state.currentWord].concat(state.bad),
       currentWord: null
     };
   }
