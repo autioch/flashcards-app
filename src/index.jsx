@@ -1,7 +1,10 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './app';
+import { createApp } from 'pipe-and-gauge';
+import actions from './actions';
+import initialState from './initialState';
+import ReactAppView from './app';
 
-import './styles';
+const el = document.querySelector('.app-container');
 
-render(<App />, document.querySelector('.app-container'));
+const store = createApp(actions, initialState, ReactAppView, el);
+
+store.setData().restart();
