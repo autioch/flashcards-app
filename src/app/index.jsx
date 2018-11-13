@@ -18,7 +18,7 @@ export default function App({ state, store }) {
         {state.isFinished && <div className="col__header">Finished!</div>}
         <div className="restart">
           <div className="col__header">{available.length} word{available.length > 1 ? 's' : ''} left</div>
-          <Button onClick={store.restart}>Restart</Button>
+          <Button onClick={store.restart} size="large">Restart</Button>
         </div>
       </div>
       <div className="col good">

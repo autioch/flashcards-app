@@ -39,10 +39,15 @@ export default class Guess extends Component {
           placeholder="Place Your guess..."
           onChange={(ev) => this.updateGuess(ev)}
           onPressEnter={() => this.guess()}
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          size="large"
         />
         <div className="small-header">Possible characters:</div>
         <div>{this.props.letters.join(' ')}</div>
-        <Button onClick={() => this.guess()}>Check</Button>
+        <Button onClick={() => this.guess()} size="large">Check</Button>
       </div>
     );
   }
