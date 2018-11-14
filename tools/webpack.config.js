@@ -11,6 +11,7 @@ const isWatch = process.argv.indexOf('--watch') > -1;
 const projectRoot = join(__dirname, '..');
 const sourceRoot = join(projectRoot, 'src');
 const buildRoot = join(projectRoot, 'docs');
+const nameSuffix = isProduction ? `${new Date().getTime()}.min` : '';
 
 const babelEnv = {
   targets: {
@@ -27,7 +28,7 @@ const webpackConfig = {
   entry: ['babel-polyfill', join(sourceRoot, 'index')],
   output: {
     path: buildRoot,
-    filename: 'files/[name].js',
+    filename: `files/[name]${nameSuffix}.js`,
     publicPath: isProduction ? `/${packageJson.name}` : '/'
   },
   resolve: {
@@ -95,7 +96,7 @@ const webpackConfig = {
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
     new ExtractTextPlugin({
-      filename: 'files/[name].css',
+      filename: `files/[name]${nameSuffix}.css`,
       disable: false,
       allChunks: true
     }),
