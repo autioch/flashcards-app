@@ -16,9 +16,6 @@ export default {
     polish: 'długo',
     german: 'lange'
   }, {
-    polish: 'poprawnie',
-    german: 'korrekt'
-  }, {
     polish: 'dobrze',
     german: 'gut'
   }, {
