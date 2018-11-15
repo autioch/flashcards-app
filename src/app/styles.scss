@@ -61,3 +61,14 @@ body,
   width: 100%;
   background: rgba(255, 255, 255, .2);
 }
+
+.suggestion__keyboard {
+  .ant-btn {
+    margin-left: .5em;
+    margin-bottom: .5em;
+    width: 2.5em;
+    text-align: center;
+    padding: 0;
+    display: inline-block;
+  }
+}

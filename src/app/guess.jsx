@@ -29,6 +29,12 @@ export default class Guess extends Component {
     this.props.guess(this.state.guess);
   }
 
+  appendLetter(letter) {
+    this.setState({
+      guess: this.state.guess + letter
+    });
+  }
+
   render() {
     return (
       <div className="item-suggestion">
@@ -46,7 +52,13 @@ export default class Guess extends Component {
           size="large"
         />
         <div className="small-header">Possible characters:</div>
-        <div>{this.props.letters.join(' ')}</div>
+        <div className="suggestion__keyboard">
+          {
+            this.props.letters.map(
+              (letter, index) => <Button key={index} onClick={() => this.appendLetter(letter)}>{letter}</Button>
+            )
+          }
+        </div>
         <Button onClick={() => this.guess()} size="large">Check</Button>
       </div>
     );
