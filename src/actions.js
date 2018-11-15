@@ -6,16 +6,14 @@ export default {
     const { words, letters } = getData();
 
     return {
-      available: words,
+      allWords: words,
       letters
     };
   },
 
   start({ state }) {
-    const allWords = state.available.concat(state.good, state.bad);
-
     return {
-      available: allWords.sort(() => Math.random() - 0.5),
+      available: state.allWords.slice().sort(() => Math.random() - 0.5),
       good: [],
       bad: [],
       isFinished: false
@@ -64,6 +62,14 @@ export default {
     return {
       bad: [state.currentWord].concat(state.bad),
       currentWord: null
+    };
+  },
+
+  toggleAllWordsList({ state, data }) {
+    const allWordsListVisible = data === undefined ? !state.allWordsListVisible : !!data;
+
+    return {
+      allWordsListVisible
     };
   }
 };

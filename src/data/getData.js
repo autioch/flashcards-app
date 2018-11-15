@@ -20,8 +20,14 @@ function getLetters(words) {
   return uniq(letters).sort((a, b) => a.localeCompare(b));
 }
 
-export default function getData() {
+function getWords() {
   const words = Object.entries(data).reduce((arr, entry) => arr.concat(parseGroupWords(entry)), []);
+
+  return words.sort((a, b) => a.polish.localeCompare(b.polish));
+}
+
+export default function getData() {
+  const words = getWords();
   const letters = getLetters(words);
 
   return {

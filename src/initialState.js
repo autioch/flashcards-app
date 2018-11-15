@@ -4,5 +4,6 @@ export default {
   bad: [],
   currentWord: null,
   isFinished: false,
+  allWordsListVisible: false,
   letters: []
 };

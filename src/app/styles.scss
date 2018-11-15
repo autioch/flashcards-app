@@ -15,7 +15,7 @@ body,
   display: flex;
   background: linear-gradient(0deg, #6af, rgba(0,0,0,0) 30%),
               linear-gradient(90deg, #f66, rgba(0,0,0,0) 70%),
-              linear-gradient(-90deg, #6f6, rgba(0,0,0,0) 70%);  
+              linear-gradient(-90deg, #6f6, rgba(0,0,0,0) 70%);
 }
 
 .col {
@@ -46,6 +46,10 @@ body,
 .restart {
   margin-top: auto;
   text-align: center;
+
+  > .ant-btn + .ant-btn {
+    margin-left: 1em;
+  }
 }
 
 .small-header.small-header {
