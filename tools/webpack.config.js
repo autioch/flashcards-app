@@ -4,12 +4,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const packageJson = require('../package.json');
 
 const isProduction = process.argv.indexOf('-p') > -1;
 const isWatch = process.argv.indexOf('--watch') > -1;
 const projectRoot = join(__dirname, '..');
 const sourceRoot = join(projectRoot, 'src');
-const buildRoot = join(projectRoot, 'build');
+const buildRoot = join(projectRoot, 'docs');
+const nameSuffix = isProduction ? `${new Date().getTime()}.min` : '';
 
 const babelEnv = {
   targets: {
@@ -26,7 +28,8 @@ const webpackConfig = {
   entry: ['babel-polyfill', join(sourceRoot, 'index')],
   output: {
     path: buildRoot,
-    filename: '[name].js'
+    filename: `files/[name]${nameSuffix}.js`,
+    publicPath: isProduction ? `/${packageJson.name}` : '/'
   },
   resolve: {
     extensions: ['.js', '.png', '.scss', '.css', '.jsx']
@@ -93,7 +96,7 @@ const webpackConfig = {
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
     new ExtractTextPlugin({
-      filename: '[name].css',
+      filename: `files/[name]${nameSuffix}.css`,
       disable: false,
       allChunks: true
     }),

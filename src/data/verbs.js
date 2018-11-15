@@ -5,27 +5,24 @@ export default {
   },
   items: [{
     polish: 'być',
-    german: ['bin', 'bist', 'ist', 'sind', 'seid', 'sind']
+    german: 'sein'
   }, {
     polish: 'mieć',
-    german: ['habe', 'hast', 'hat', 'haben', 'habt', 'haben']
-  }, {
-    polish: '.',
-    german: ['lasse', 'lässt', 'lässt', 'lassen', 'lasst', 'lassen']
+    german: 'haben'
   }, {
     polish: 'uczyć się',
-    german: ['lerne', 'lernst', 'lernt', 'lernen', 'lernt', 'lernen']
+    german: 'lernen'
   }, {
     polish: 'robić',
-    german: ['mache', 'machst', 'macht', 'machen', 'macht', 'machen']
+    german: 'machen'
   }, {
     polish: 'dawać',
-    german: ['gebe', 'gibst', 'gibt', 'geben', 'gebt', 'geben']
+    german: 'geben'
   }, {
     polish: 'brać',
-    german: ['nehme', 'playnimmst', 'playnimmt', 'playnehmen', 'playnehmt', 'playnehmen']
+    german: 'nehmen'
   }, {
     polish: 'pomagać',
-    german: ['helfe', 'hilfst', 'hilft', 'helfen', 'helft', 'helfen']
+    german: 'helfen'
   }]
 };

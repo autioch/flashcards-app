@@ -6,6 +6,7 @@ import particles from './particles';
 import prepositions from './prepositions';
 import pronouns from './pronouns';
 import verbs from './verbs';
+import recent from './recent';
 
 // https://niemiecki.ang.pl/gramatyka/czesci-mowy
 
@@ -17,5 +18,6 @@ export default {
   particles,
   prepositions,
   adverbs,
-  pronouns
+  pronouns,
+  recent
 };
