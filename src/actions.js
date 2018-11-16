@@ -63,13 +63,5 @@ export default {
       bad: [state.currentWord].concat(state.bad),
       currentWord: null
     };
-  },
-
-  toggleAllWordsList({ state, data }) {
-    const allWordsListVisible = data === undefined ? !state.allWordsListVisible : !!data;
-
-    return {
-      allWordsListVisible
-    };
   }
 };
