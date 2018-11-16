@@ -5,7 +5,18 @@ body {
 
 html,
 body,
+.app,
+.app-container,
+.app-page,
 #root {
   height: 100%;
+  overflow: hidden;
   width: 100%;
+}
+
+.app-page {
+  background-color: #f8f8f8;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
 }

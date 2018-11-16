@@ -10,7 +10,7 @@ export default function Game({ state, store }) {
   const { guess, restart } = store;
 
   return (
-    <div className="game">
+    <div className="app-page game">
       <List words={bad} header="Bad" />
       <div className="col mid">
         {!isFinished && <Guess letters={letters} currentWord={currentWord} guess={guess} />}
@@ -18,7 +18,9 @@ export default function Game({ state, store }) {
         <div className="restart">
           <div className="col__header">{available.length} word{available.length > 1 ? 's' : ''} left</div>
           <Button onClick={restart} size="large">Restart</Button>
-          <NavLink exact className="menu__link" to="/library" activeClassName="menu__link--active">Library</NavLink>
+          <NavLink exact to="/library" activeClassName="menu__link--active">
+            <Button onClick={restart} size="large">Library</Button>
+          </NavLink>
         </div>
       </div>
       <List words={good} header="Good" />

@@ -6,17 +6,14 @@ import './styles.scss';
 
 export default function App({ state, store }) {
   return (
-    <div className="app">
-      <Router
+    <Router
 
       // basename="/flashcards-app" // This should be commented for development until fixed.
-      >
-        <div>
-
-          <Route exact path="/" render={() => <Game state={state} store={store} /> } />
-          <Route exact path="/library" render={() => <Library state={state} store={store} /> } />
-        </div>
-      </Router>
-    </div>
+    >
+      <div className="app-container">
+        <Route exact path="/" render={() => <Game state={state} store={store} /> } />
+        <Route exact path="/library" render={() => <Library state={state} store={store} /> } />
+      </div>
+    </Router>
   );
 }
