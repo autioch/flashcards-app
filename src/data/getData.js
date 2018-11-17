@@ -9,13 +9,14 @@ function parseGroupWords([key, { items }]) {
   return items
     .filter(({ polish, german }) => polish.length > 1 && german.length > 1)
     .map(({ polish, german }) => ({
-      polish: Array.isArray(polish) ? polish[0] : polish,
-      german: Array.isArray(german) ? german[0] : german
+      origin: Array.isArray(polish) ? polish[0] : polish,
+      outcome: Array.isArray(german) ? german[0] : german,
+      duration: 0
     }));
 }
 
 function getLetters(words) {
-  const letters = words.reduce((arr, { german }) => arr.concat(german.split('')), []);
+  const letters = words.reduce((arr, { outcome }) => arr.concat(outcome.split('')), []);
 
   return uniq(letters).sort((a, b) => a.localeCompare(b));
 }
@@ -23,7 +24,12 @@ function getLetters(words) {
 function getWords() {
   const words = Object.entries(data).reduce((arr, entry) => arr.concat(parseGroupWords(entry)), []);
 
-  return words.sort((a, b) => a.polish.localeCompare(b.polish));
+  return words
+    .sort((a, b) => a.origin.localeCompare(b.origin))
+    .map((word, index) => ({
+      id: index,
+      ...word
+    }));
 }
 
 export default function getData() {

@@ -1,0 +1,25 @@
+.bad-list {
+  width: 35%;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 1em;
+}
+
+.bad-list-item {
+  display: flex;
+  width: 100%;
+  padding: .1em .2em;
+
+  > .origin,
+  > .outcome,
+  > .wrong,
+  > .empty {
+    width: 33%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

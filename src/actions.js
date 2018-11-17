@@ -1,5 +1,7 @@
 import getData from './data/getData';
 
+const HALF = 0.5;
+
 export default {
 
   setData() {
@@ -13,7 +15,7 @@ export default {
 
   start({ state }) {
     return {
-      available: state.allWords.slice().sort(() => Math.random() - 0.5),
+      available: state.allWords.slice().sort(() => Math.random() - HALF),
       good: [],
       bad: [],
       isFinished: false
@@ -37,17 +39,24 @@ export default {
     };
   },
 
-  guess({ state, data: triedWord, store }) {
+  guess({ state, data, store }) {
+    const { guess, duration } = data;
     const { currentWord } = state;
 
-    if (currentWord.german === triedWord) {
+    currentWord.duration = Math.round(duration / 1000);
+    currentWord.guess = guess;
+
+    if (currentWord.outcome === guess) {
+    // if (Math.random() > HALF) {
       store.setGood();
     } else {
       store.setBad();
     }
+
     if (!state.available.length) {
       store.finish();
     }
+
     store.pick();
   },
 

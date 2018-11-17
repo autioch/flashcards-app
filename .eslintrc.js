@@ -6,9 +6,9 @@ module.exports = {
   //     jsx: true
   //   }
   // },
-  // rules: {
+  rules: {
   //   'class-methods-use-this': ['off'],
-  //   'id-blacklist': ['off'],
+    'id-blacklist': ['off'],
   //   'line-comment-position': ['off'],
   //   'no-inline-comments': ['off'],
   //   'no-undefined': ['off'],
@@ -16,8 +16,8 @@ module.exports = {
   //   'no-console': ['off'],
   //   'no-plusplus': ['off'],
   //   'camelcase': ['off'],
-  //   'id-length': ['off'],
+    'id-length': ['off'],
   //   'react/jsx-uses-react': 'error',
   //   'react/jsx-uses-vars': 'error',
-  // }
+  }
 };

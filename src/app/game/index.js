@@ -1,29 +1,50 @@
 import React from 'react';
+import BadList from './badList';
+import GoodList from './goodList';
 import Guess from './guess';
-import List from './list';
-import { NavLink } from 'react-router-dom';
-import { Button } from 'antd';
+import Menu from './menu';
 import './styles.scss';
 
+const PERCENT = 100;
+
+function calculateStatus(good, bad) {
+  const goodCount = good.length;
+  const badCount = bad.length;
+
+  if (!badCount) {
+    return {
+      left: '0'
+    };
+  }
+
+  if (!goodCount) {
+    return {
+      left: '100%'
+    };
+  }
+
+  const total = goodCount + badCount;
+
+  return {
+    left: `${Math.floor((badCount / total) * PERCENT)}%`
+  };
+}
+
 export default function Game({ state, store }) {
-  const { good, bad, available, letters, isFinished, currentWord } = state;
-  const { guess, restart } = store;
+  const { good, bad, letters, isFinished, currentWord } = state;
+  const { guess } = store;
+  const style = calculateStatus(good, bad);
 
   return (
-    <div className="app-page game">
-      <List words={bad} header="Bad" />
-      <div className="col mid">
+    <div className="game">
+      <div className="game__status" style={style} />
+      <BadList words={bad} />
+      <div className="game-content">
         {!isFinished && <Guess letters={letters} currentWord={currentWord} guess={guess} />}
-        {isFinished && <div className="col__header">Finished!</div>}
-        <div className="restart">
-          <div className="col__header">{available.length} word{available.length > 1 ? 's' : ''} left</div>
-          <Button onClick={restart} size="large">Restart</Button>
-          <NavLink exact to="/library" activeClassName="menu__link--active">
-            <Button onClick={restart} size="large">Library</Button>
-          </NavLink>
-        </div>
+        {isFinished && <div className="">Finished!</div>}
+        <Menu store={store} state={state} />
       </div>
-      <List words={good} header="Good" />
+      <GoodList words={good} />
     </div>
   );
 }

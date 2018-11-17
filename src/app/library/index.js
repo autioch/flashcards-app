@@ -17,8 +17,8 @@ export default function Library({ state }) {
       <div className="library__list">
         {allWords.map((word, index) =>
           <div key={index} className="library__row">
-            <div className="library__cell">{word.polish}</div>
-            <div className="library__cell">{word.german}</div>
+            <div className="library__cell">{word.origin}</div>
+            <div className="library__cell">{word.outcome}</div>
           </div>
         )}
       </div>
