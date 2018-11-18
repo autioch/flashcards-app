@@ -28,6 +28,7 @@
   ],
   "dependencies": {
     "antd": "^3.10.7",
+    "canvas-lightning": "^1.0.0",
     "node-sass": "^4.10.0",
     "pipe-and-gauge": "^1.1.0",
     "react": "^16.6.3",

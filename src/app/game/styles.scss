@@ -54,25 +54,3 @@
 .duration {
   color: #999;
 }
-
-
-.game__status {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: #3a3;
-  transition: left 400ms;
-
-  &::before {
-    content: '';
-    background: linear-gradient(to left,  #3a3, #ff3 15px, #a33);
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    bottom: 0;
-    left: -15px;
-    width: 30px;
-  }
-}

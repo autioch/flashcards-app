@@ -1,0 +1,21 @@
+.game-status {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #3a3;
+  transition: left 400ms;
+}
+
+
+.game-status__canvas {
+  position: absolute;
+  left: -.5em;
+  width: 1em;
+  height: 100%;
+
+  &.is-invisible {
+    visibility: hidden;
+  }
+}
