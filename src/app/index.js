@@ -8,7 +8,7 @@ export default function App({ state, store }) {
   return (
     <Router
 
-      // basename="/flashcards-app" // This should be commented for development until fixed.
+      basename="/flashcards-app" // This should be commented for development until fixed.
     >
       <div className="app-container">
         <Route exact path="/" render={() => <Game state={state} store={store} /> } />
