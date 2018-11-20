@@ -5,7 +5,7 @@ export default {
   good: [],
   bad: [],
   currentWord: null,
-  isFinished: false,
+  isFinished: true,
   letters: [],
   urlFolderPath: IS_DEVELOPMENT ? '' : '/flashcards-app'
 };

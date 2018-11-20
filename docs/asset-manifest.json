@@ -1,7 +1,7 @@
 {
   "main.css": "/flashcards-app/static/css/main.f5fa7414.chunk.css",
-  "main.js": "/flashcards-app/static/js/main.ada0edac.chunk.js",
-  "main.js.map": "/flashcards-app/static/js/main.ada0edac.chunk.js.map",
+  "main.js": "/flashcards-app/static/js/main.f24c3288.chunk.js",
+  "main.js.map": "/flashcards-app/static/js/main.f24c3288.chunk.js.map",
   "static/css/1.652a0074.chunk.css": "/flashcards-app/static/css/1.652a0074.chunk.css",
   "static/js/1.298834c2.chunk.js": "/flashcards-app/static/js/1.298834c2.chunk.js",
   "static/js/1.298834c2.chunk.js.map": "/flashcards-app/static/js/1.298834c2.chunk.js.map",
@@ -10,6 +10,6 @@
   "static/css/main.f5fa7414.chunk.css.map": "/flashcards-app/static/css/main.f5fa7414.chunk.css.map",
   "static/css/1.652a0074.chunk.css.map": "/flashcards-app/static/css/1.652a0074.chunk.css.map",
   "index.html": "/flashcards-app/index.html",
-  "precache-manifest.1236b31856d1c485f8df44abf7a3727b.js": "/flashcards-app/precache-manifest.1236b31856d1c485f8df44abf7a3727b.js",
+  "precache-manifest.07d4505c720768b1b62bd8c012b1140e.js": "/flashcards-app/precache-manifest.07d4505c720768b1b62bd8c012b1140e.js",
   "service-worker.js": "/flashcards-app/service-worker.js"
 }
