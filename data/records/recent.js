@@ -22,7 +22,7 @@ module.exports = {
     german: 'aufräumen'
   }, {
     polish: 'porządkować',
-    german: 'potzen'
+    german: 'putzen'
   }, {
     polish: 'należeć',
     german: 'gehören'

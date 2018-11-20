@@ -23,7 +23,7 @@ module.exports = {
     german: 'dort,dorthin'
   }, {
     polish: 'tutaj',
-    german: 'hier, playhierher'
+    german: 'hier'
   }, {
     polish: 'wszędzie',
     german: 'überall'
