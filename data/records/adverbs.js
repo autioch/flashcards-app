@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   header: {
     polish: 'Przysłów(ek/ki)',
     german: 'Adverb(ien)'

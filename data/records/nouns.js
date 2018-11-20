@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   header: {
     polish: 'Rzeczownik(i)',
     german: 'Substantiv(e)'

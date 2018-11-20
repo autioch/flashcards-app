@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   header: {
     polish: 'Zaim(ek/ki)',
     german: 'Pronomen'

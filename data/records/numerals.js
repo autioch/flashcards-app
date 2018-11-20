@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   header: {
     polish: 'Liczebniki(i)',
     german: 'Ziffer/Zahlen'

@@ -1,5 +1,5 @@
-import data from './index';
-import { uniq } from 'lodash';
+const data = require('./records/index');
+const { uniq } = require('lodash');
 
 function parseGroupWords([key, { items }]) {
   if (key === 'numerals') {
@@ -32,7 +32,7 @@ function getWords() {
     }));
 }
 
-export default function getData() {
+module.exports = function getData() {
   const words = getWords();
   const letters = getLetters(words);
 
@@ -40,4 +40,4 @@ export default function getData() {
     words,
     letters
   };
-}
+};

@@ -8,4 +8,4 @@ const el = document.querySelector('#root');
 
 const store = createApp(actions, initialState, ReactAppView, el);
 
-store.setData().restart();
+store.prepare();

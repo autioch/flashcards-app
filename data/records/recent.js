@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   items: [{
     polish: 'zawód',
     german: 'der Beruf'

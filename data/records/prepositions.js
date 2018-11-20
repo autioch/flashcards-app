@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   header: {
     polish: 'Przyim(ek/ki)',
     german: 'Präposition(en)'

@@ -1,11 +1,41 @@
-import getData from './data/getData';
+import { uniq } from 'lodash';
 
 const HALF = 0.5;
+const MILISECOND = 1000;
 
 export default {
 
-  setData() {
-    const { words, letters } = getData();
+  prepare({ store, state }) {
+    window
+      .fetch(`${state.urlFolderPath}/library.csv`)
+      .then((resp) => resp.text())
+      .then((contents) => {
+        const lines = contents.trim().split('\n');
+        const words = lines.map((line, index) => {
+          const [income, outcome, isIgnored = false] = line.trim().split(';');
+
+          return {
+            id: index,
+            origin: income,
+            outcome,
+            isIgnored: !!isIgnored
+          };
+        });
+
+        const allLetters = words.reduce((arr, { outcome }) => arr.concat(outcome.split('')), []);
+        const letters = uniq(allLetters).sort((a, b) => a.localeCompare(b));
+
+        store
+          .setData({
+            words,
+            letters
+          })
+          .restart();
+      });
+  },
+
+  setData({ data }) {
+    const { words, letters } = data;
 
     return {
       allWords: words,
@@ -43,7 +73,7 @@ export default {
     const { guess, duration } = data;
     const { currentWord } = state;
 
-    currentWord.duration = Math.round(duration / 1000);
+    currentWord.duration = Math.round(duration / MILISECOND);
     currentWord.guess = guess;
 
     if (currentWord.outcome === guess) {

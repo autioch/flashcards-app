@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   header: {
     polish: 'Partykuł(y)',
     german: 'Partikel'
