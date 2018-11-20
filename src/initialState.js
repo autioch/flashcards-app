@@ -1,4 +1,4 @@
-const IS_DEVELOPMENT = true;
+const IS_DEVELOPMENT = false;
 
 export default {
   available: [],

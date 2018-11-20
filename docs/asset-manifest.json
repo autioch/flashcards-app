@@ -1,15 +1,15 @@
 {
   "main.css": "/flashcards-app/static/css/main.f5fa7414.chunk.css",
-  "main.js": "/flashcards-app/static/js/main.53d32a44.chunk.js",
-  "main.js.map": "/flashcards-app/static/js/main.53d32a44.chunk.js.map",
+  "main.js": "/flashcards-app/static/js/main.ada0edac.chunk.js",
+  "main.js.map": "/flashcards-app/static/js/main.ada0edac.chunk.js.map",
   "static/css/1.652a0074.chunk.css": "/flashcards-app/static/css/1.652a0074.chunk.css",
   "static/js/1.298834c2.chunk.js": "/flashcards-app/static/js/1.298834c2.chunk.js",
   "static/js/1.298834c2.chunk.js.map": "/flashcards-app/static/js/1.298834c2.chunk.js.map",
   "runtime~main.js": "/flashcards-app/static/js/runtime~main.ae89a290.js",
   "runtime~main.js.map": "/flashcards-app/static/js/runtime~main.ae89a290.js.map",
-  "static/css/1.652a0074.chunk.css.map": "/flashcards-app/static/css/1.652a0074.chunk.css.map",
   "static/css/main.f5fa7414.chunk.css.map": "/flashcards-app/static/css/main.f5fa7414.chunk.css.map",
+  "static/css/1.652a0074.chunk.css.map": "/flashcards-app/static/css/1.652a0074.chunk.css.map",
   "index.html": "/flashcards-app/index.html",
-  "precache-manifest.671d2c93a23d7bc059e4c0254fce0468.js": "/flashcards-app/precache-manifest.671d2c93a23d7bc059e4c0254fce0468.js",
+  "precache-manifest.1236b31856d1c485f8df44abf7a3727b.js": "/flashcards-app/precache-manifest.1236b31856d1c485f8df44abf7a3727b.js",
   "service-worker.js": "/flashcards-app/service-worker.js"
 }
