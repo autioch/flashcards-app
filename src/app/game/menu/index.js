@@ -3,19 +3,17 @@ import { NavLink } from 'react-router-dom';
 import { Button } from 'antd';
 import './styles.scss';
 
-export default function GameMenu({ state, store }) {
+export default function GameMenu({ store, state }) {
   const { available } = state;
   const { restart } = store;
 
   return (
     <div className="game-menu">
-      <div className="game__header">{available.length} word{available.length > 1 ? 's' : ''} left</div>
-      <div className="game-menu-options">
-        <Button onClick={restart} type="danger">Restart</Button>
-        <NavLink exact to="/library">
-          <Button onClick={restart}>Library</Button>
-        </NavLink>
-      </div>
+      <Button size="large" type="primary" onClick={restart}>Restart</Button>
+      <div className="game-menu__remaining">{available.length} left</div>
+      <NavLink exact to="/library">
+        <Button size="large" type="primary">Library</Button>
+      </NavLink>
     </div>
   );
 }

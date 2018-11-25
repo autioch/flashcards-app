@@ -1,19 +1,24 @@
 import React from 'react';
 import { Button } from 'antd';
 
-function Letter({ letter, useLetter }) {
+function KeyboardButton({ letter, useLetter }) {
+  return (<Button className={letter === '' ? 'is-invisible' : ''} onClick={() => useLetter(letter)} >{letter}</Button>);
+}
+
+function KeyboardRow({ row, useLetter }) {
   return (
-    <Button onClick={() => useLetter(letter)} >{letter}</Button>
+    <div className="keyboard__row">
+      {row.map((letter, index) => <KeyboardButton key={index} letter={letter} useLetter={useLetter} />)}
+    </div>
   );
 }
 
-export default function GameGuessKeyboard({ letters, useLetter }) {
+export default function Keyboard({ keyboard, useLetter }) {
   return (
     <div className="keyboard">
-      <div className="keyboard__header">Possible characters:</div>
-      <div className="keyboard__letters">
-        {letters.map((letter) => <Letter key={letter} letter={letter} useLetter={useLetter} />)}
-      </div>
+      {keyboard.map((row, index) =>
+        <KeyboardRow key={index} useLetter={useLetter} row={row} />
+      )}
     </div>
   );
 }

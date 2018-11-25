@@ -16,7 +16,7 @@ export default function GoodList({ words }) {
 
   return (
     <div className="good-list">
-      <div className="game__header">{count} good</div>
+      <div className="game__header">Good: {count}</div>
       <div className="word-list">
         {words.map((word) => <GoodItem key={word.id} word={word} />)}
       </div>

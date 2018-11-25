@@ -1,41 +1,53 @@
-.game-guess {
-  width: 100%;
-}
-
-.game-content {
-  width: 30%;
-  flex: none;
-  padding: 1em 2em 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  justify-content: space-between;
-}
-
 .current-word {
   font-size: 1.5em;
-  margin: 1.5em 0;
+  padding: .25em 1em;
+  border-radius: .2em;
+  background-color: rgba(255, 255, 255, .8);
+  // text-align: center;
+  // display: inline-block;
+  // min-width: 10em;
+  // width: auto;
+  // margin: 0 auto;
+  align-self: center;
 }
 
-.keyboard {
-  margin-bottom: 1em;
+.game-guess {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  flex: none;
 }
 
-.keyboard__header {
+.game-guess__input {
   margin: 1em 0;
 }
 
-.keyboard__letters {
-  text-align: center;
+.game-guess__check {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.keyboard {
+  // text-align: center;
+  margin-bottom: 1em;
+}
+
+
+.keyboard__row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: no-wrap;
 
   > .ant-btn {
-    margin-left: .5em;
-    margin-bottom: .5em;
+    margin: .15em;
     width: 2.5em;
     text-align: center;
     padding: 0;
-    display: inline-block;
+    flex: none;
+
+    &.is-invisible {
+      visibility: hidden;
+      pointer-events: none;
+    }
   }
 }

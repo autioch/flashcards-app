@@ -4,6 +4,7 @@ import { Input } from 'antd';
 export default function GuessInput({ value, update, approve }) {
   return (
     <Input
+      className="game-guess__input"
       value={value}
       placeholder="Place Your guess..."
       onChange={update}

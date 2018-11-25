@@ -1,7 +1,30 @@
-import { uniq } from 'lodash';
+import { flattenDeep, uniq, chunk } from 'lodash';
 
 const HALF = 0.5;
 const MILISECOND = 1000;
+const KEYBOARD_ROW_LENGTH = 10;
+
+function setupKeyboard(words) {
+  const keyboard = [
+    ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+    ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+    ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+  ];
+
+  const keyboardLetters = flattenDeep(keyboard).reduce((obj, letter) => Object.assign(obj, {
+    [letter]: true
+  }), {});
+
+  const allLetters = words
+    .reduce((arr, { outcome }) => arr.concat(outcome.toLowerCase().split('')), [])
+    .filter((letter) => !keyboardLetters[letter]);
+
+  const extraLetters = uniq(allLetters).sort((a, b) => a.localeCompare(b)).concat('←');
+  const extraRows = chunk(extraLetters, KEYBOARD_ROW_LENGTH);
+  const fullKeyboard = keyboard.concat(extraRows);
+
+  return fullKeyboard;
+}
 
 export default {
 
@@ -22,24 +45,16 @@ export default {
           };
         });
 
-        const allLetters = words.reduce((arr, { outcome }) => arr.concat(outcome.split('')), []);
-        const letters = uniq(allLetters).sort((a, b) => a.localeCompare(b));
-
         store
-          .setData({
-            words,
-            letters
-          })
+          .setData(words)
           .restart();
       });
   },
 
-  setData({ data }) {
-    const { words, letters } = data;
-
+  setData({ data: words }) {
     return {
       allWords: words,
-      letters
+      keyboard: setupKeyboard(words)
     };
   },
 
@@ -76,7 +91,7 @@ export default {
     currentWord.duration = Math.round(duration / MILISECOND);
     currentWord.guess = guess;
 
-    if (currentWord.outcome === guess) {
+    if (currentWord.outcome.toLowerCase() === guess.toLowerCase()) {
     // if (Math.random() > HALF) {
       store.setGood();
     } else {

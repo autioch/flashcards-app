@@ -16,7 +16,7 @@ export default function BadList({ words }) {
 
   return (
     <div className="bad-list">
-      <div className="game__header">{count} bad</div>
+      <div className="game__header">Bad: {count}</div>
       <div className="word-list">
         {words.map((word) => <BadItem key={word.id} word={word} />)}
       </div>

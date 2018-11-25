@@ -1,6 +1,7 @@
-export default function Finished({}) {
+import React from 'react';
+
+export default function Finished() {
   return (
-    <div>
-    </div>
+    <div>Finished!</div>
   );
 }

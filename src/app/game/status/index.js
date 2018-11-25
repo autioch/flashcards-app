@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import canvasLightning from 'canvas-lightning';
+
 import './styles.scss';
 
 const PERCENT = 100;

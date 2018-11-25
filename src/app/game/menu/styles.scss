@@ -1,11 +1,33 @@
+// .game-menu {
+//   width: 100%;
+//   padding: 1em 0;
+//   background: rgba(255, 255, 255, .6);
+// }
+//
+// .game-menu-options {
+//   display: flex;
+//   width: 100%;
+//   justify-content: space-around;
+// }
+
 .game-menu {
-  width: 100%;
-  padding: 1em 0;
-  background: rgba(255, 255, 255, .6);
+  margin-top: auto;
+  display: flex;
+  flex: none;
+  padding: 1em;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.game-menu-options {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
+.game-menu__remaining {
+  // align-self: center;
+  // background-color: rgba(255, 255, 255, .8);
+  border-radius: .2em;
+  font-size: 1.2em;
+  font-weight: bold;
+  // margin-bottom: 1em;
+  // padding: .25em 1em;
+  // text-align: ri;
+  color: #fff;
+  text-shadow: 0 0 2px #333;
 }

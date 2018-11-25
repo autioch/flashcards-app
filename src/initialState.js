@@ -6,6 +6,6 @@ export default {
   bad: [],
   currentWord: null,
   isFinished: true,
-  letters: [],
+  keyboard: [],
   urlFolderPath: IS_DEVELOPMENT ? '' : '/flashcards-app'
 };

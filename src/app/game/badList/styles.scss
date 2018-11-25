@@ -1,17 +1,38 @@
 .bad-list {
-  width: 35%;
-  flex: none;
   display: flex;
+  flex: 1 1 50%;
   flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 1em;
+  overflow: auto;
+  padding: 0 .5em;
+  margin-bottom: 1em;
+}
+
+.word-list {
+  overflow: auto;
+  width: 100%;
+  flex-grow: 1;
+  background: rgba(255, 255, 255, .8);
+  border-radius: .2em;
+  box-shadow: 0 0 3px #666;
+}
+
+.game__header {
+  // align-self: center;
+  // background-color: rgba(255, 255, 255, .8);
+  border-radius: .2em;
+  font-size: 1.2em;
+  font-weight: bold;
+  // margin-bottom: 1em;
+  // padding: .25em 1em;
+  // text-align: ri;
+  color: #fff;
+  text-shadow: 0 0 2px #333;
 }
 
 .bad-list-item {
   display: flex;
   width: 100%;
-  padding: .1em .2em;
+  padding: .1em .25em;
 
   > .origin,
   > .outcome,

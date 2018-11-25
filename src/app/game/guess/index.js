@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'antd';
 import Keyboard from './keyboard';
 import Input from './input';
+
 import './styles.scss';
 
 export default class Guess extends Component {
@@ -41,19 +42,21 @@ export default class Guess extends Component {
   }
 
   useLetter(letter) {
+    const { guess } = this.state;
+    const newGuess = letter === '←' ? guess.slice(0, -1) : guess + letter;
+
     this.setState({
-      guess: this.state.guess + letter
+      guess: newGuess
     });
   }
 
   render() {
     return (
       <div className="game-guess">
-        <div className="game__header">Word to translate</div>
         <div className="current-word">{this.props.currentWord.origin}</div>
         <Input value={this.state.guess} update={this.updateGuess} approve={this.guess} />
-        <Keyboard letters={this.props.letters} useLetter={this.useLetter} />
-        <Button size="large" onClick={this.guess} type="primary">Check</Button>
+        <Keyboard keyboard={this.props.keyboard} useLetter={this.useLetter} />
+        <Button className="game-guess__check" size="large" onClick={this.guess} type="primary">Check</Button>
       </div>
     );
   }

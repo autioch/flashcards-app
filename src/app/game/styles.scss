@@ -1,37 +1,38 @@
 .game {
   display: flex;
   height: 100%;
-  width: 100%;
+  flex-direction: column;
+  // width: 100%;
   background: #a33;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
+//
+// .bad-list,
+// .good-list {
+//   overflow: auto;
+//   flex: 1 1 50%;
+// }
 
-.game__header {
-  font-size: 1.2em;
-  margin-bottom: 1em;
-  text-align: center;
-}
+// /*
 
-.game__time {
-  color: #aaa;
-  font-size: .8em;
-  margin-left: .25em;
+//
+// .game__time {
+//   color: #aaa;
+//   font-size: .8em;
+//   margin-left: .25em;
+//
+//   &::after {
+//     content: 's';
+//   }
+// }
+//
+// .game__success {
+//   color: #090;
+// }
+//
 
-  &::after {
-    content: 's';
-  }
-}
-
-.game__success {
-  color: #090;
-}
-
-.word-list {
-  overflow: auto;
-  width: 100%;
-  background: rgba(255, 255, 255, .6);
-}
 
 .separator {
   color: #ccc;
